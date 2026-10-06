@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Saldo - CryptoVault</title>
+    <script>
+        // Load theme immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/templatemo-crypto-style.css">
+    <link rel="stylesheet" href="assets/css/templatemo-crypto-dashboard.css">
+    <link rel="stylesheet" href="assets/css/templatemo-crypto-pages.css">
+    
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><img src="assets/images/logo.png" style="width: 60px" alt="CryptoVault Logo"></div>
+                <span class="logo-text">Administators</span>
+            </div>
+
+            <nav class="nav-section">
+                <div class="nav-label">Main Menu</div>
+                <a href="index.html" class="nav-item active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                    Dashboard
+                </a>
+                <div class="nav-dropdown">
+                    <button class="nav-item member-dropdown-toggle" type="button" aria-expanded="false" aria-controls="memberSubmenu">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Member</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="nav-submenu" id="memberSubmenu">
+                        <a href="daftar_member.html" class="nav-subitem">Daftar Member</a>
+                        <a href="tambah_member.html" class="nav-subitem">Tambah Member</a>
+                        <a href="setujui_member.html" class="nav-subitem">Setujui Member</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-item member-dropdown-toggle" type="button" aria-expanded="false" aria-controls="walletSubmenu">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                        <span>Wallet</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="nav-submenu" id="walletSubmenu">
+                        <a href="tambah_saldo.html" class="nav-subitem">Tambah Saldo</a>
+                        <a href="daftar_deposit.html" class="nav-subitem">Daftar Deposit</a>
+                        <a href="konfirmasi_deposit.html" class="nav-subitem">Setujui Deposit</a>
+                        <a href="daftar_withdraw.html" class="nav-subitem">Daftar Withdraw</a>
+                        <a href="konfirmasi_withdraw.html" class="nav-subitem">Setujui Withdraw</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item member-dropdown-toggle" type="button" aria-expanded="false" aria-controls="kycSubmenu">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>KYC</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="nav-submenu" id="kycSubmenu">
+                        <a href="daftar_kyc.html" class="nav-subitem">Daftar KYC</a>
+                        <a href="konfirmasi_kyc.html" class="nav-subitem">Konfirmasi KYC</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item member-dropdown-toggle" type="button" aria-expanded="false" aria-controls="currencySubmenu">
+                        <i class="fa-brands fa-bitcoin"></i>
+                        <span>Currency</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="nav-submenu" id="currencySubmenu">
+                        <a href="ganti_currency.html" class="nav-subitem">Ganti Currency</a>
+                        <a href="tambah_currency.html" class="nav-subitem">Tambah Currency</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item member-dropdown-toggle" type="button" aria-expanded="false" aria-controls="appearanceSubmenu">
+                        <i class="fa-solid fa-desktop"></i>
+                        <span>Tampilan</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="nav-submenu" id="appearanceSubmenu">
+                        <a href="warna_dashboard.html" class="nav-subitem">Warna Dashboard</a>
+                        <button class="nav-subitem theme-choice" type="button" data-theme-choice="dark">Dark Mode</button>
+                        <button class="nav-subitem theme-choice" type="button" data-theme-choice="light">Light Mode</button>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <nav class="nav-section">
+                <div class="nav-label">Account</div>
+                <a href="settings.html" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+                    </svg>
+                    Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="theme-toggle">
+                    <div class="theme-toggle-label">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        Light Mode
+                    </div>
+                    <div class="theme-switch" id="themeSwitch"></div>
+                </div>
+                <button class="logout-btn" onclick="window.location.href='login.html'">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Tambah Saldo</h1>
+                <p>Catat permintaan deposit member untuk ditinjau sebelum saldo ditambahkan.</p>
+            </div>
+            <section class="card member-form-card admin-content-card">
+                <h2 class="card-title">Buat Permintaan Deposit</h2>
+                <p class="card-description">Permintaan saldo akan berstatus menunggu sampai disetujui.</p>
+                <p class="member-message" id="adminContentMessage" role="status" hidden></p>
+                <form data-admin-form="deposits" data-success-message="Permintaan deposit tersimpan dan menunggu persetujuan.">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="depositMember">Nama member</label>
+                            <input class="form-input" id="depositMember" name="member" required maxlength="100" placeholder="Nama member">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="depositEmail">Email member</label>
+                            <input class="form-input" id="depositEmail" name="email" type="email" required maxlength="254" placeholder="nama@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="depositAmount">Jumlah saldo</label>
+                            <input class="form-input" id="depositAmount" name="amount" type="number" min="0.01" step="0.01" required placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="depositCurrency">Currency</label>
+                            <select class="form-select" id="depositCurrency" name="currency" required>
+                                <option value="USD">USD</option>
+                                <option value="IDR">IDR</option>
+                                <option value="BTC">BTC</option>
+                                <option value="USDT">USDT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn primary" type="submit">Simpan Permintaan</button>
+                        <a class="btn member-cancel" href="daftar_deposit.html">Lihat Deposit</a>
+                    </div>
+                </form>
+            </section>
+            <footer class="copyright">
+                Copyright &copy; 2026 Administator. Designed by <a href="index.html" target="_blank" rel="nofollow">Exchange</a>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/templatemo-crypto-script.js"></script>
+</body>
+</html>
